@@ -1,5 +1,4 @@
 def main():
-
     input_string = input("Enter a string: ")
     rules = {}
 
@@ -25,6 +24,16 @@ def main():
                 table[i][i].add(variable)
 
     print(table)
+
+
+def cross_product(set1, set2):
+    result = set()
+
+    for variable1 in set1:
+        for variable2 in set2:
+            result.add(variable1 + variable2)
+
+    return result
 
 
 if __name__ == "__main__":

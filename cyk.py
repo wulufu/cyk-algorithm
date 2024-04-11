@@ -16,6 +16,11 @@ def main():
         else:
             rules[lhs] = [rhs]
 
+    length = len(input_string)
+    table = [[set() for _ in range(length)] for _ in range(length)]
+
+    print(table)
+
 
 if __name__ == "__main__":
     main()

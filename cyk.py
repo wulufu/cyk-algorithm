@@ -1,5 +1,10 @@
 def main():
     input_string = input("Enter a string: ")
+    rules = generate_rules()
+    perform_cyk(input_string, rules)
+
+
+def generate_rules():
     rules = {}
 
     with open("cfg.txt") as file:
@@ -15,6 +20,10 @@ def main():
         else:
             rules[lhs] = [rhs]
 
+    return rules
+
+
+def perform_cyk(input_string, rules):
     length = len(input_string)
     table = [[set() for _ in range(length)] for _ in range(length)]
 

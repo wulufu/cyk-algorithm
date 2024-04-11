@@ -19,6 +19,11 @@ def main():
     length = len(input_string)
     table = [[set() for _ in range(length)] for _ in range(length)]
 
+    for i in range(length):
+        for variable in rules:
+            if input_string[i] in rules[variable]:
+                table[i][i].add(variable)
+
     print(table)
 
 

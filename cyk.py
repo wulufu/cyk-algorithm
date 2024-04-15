@@ -118,11 +118,11 @@ class _CFG:
         # Raises a _CFGFormatError if a variable appears on the right-hand
         # side of a rule but is never defined.
         for rhs in self._rules.values():
-            for string in rhs:
-                if len(string) > 1:
-                    for variable in string:
-                        if variable not in self._variables:
-                            raise _CFGFormatError
+            variables = "".join(string for string in rhs if len(string) > 1)
+
+            for variable in variables:
+                if variable not in self._variables:
+                    raise _CFGFormatError
 
 
 class _CFGFormatError(Exception):

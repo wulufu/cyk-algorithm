@@ -2,9 +2,9 @@
 
 This script performs CYK on strings input by the user until the program exits.
 
-A Context-Free Grammar (CFG) is generated from a file. The name for this file
-can be provided using command-line arguments, otherwise the default filename
-"cfg.txt" will be used. The program will exit if the file is not found.
+A CFG is generated from a file. The name for this file can be provided using
+'-f' or '--file' when running the script, otherwise the user will be prompted
+for a file name. The program will exit if the file is not found.
 
 Each line in the file must be of the form "A -> BC" or "A -> a", where
 'A', 'B', and 'C' are variables, and 'a' is a terminal. Optionally, two or
@@ -28,14 +28,20 @@ import sys
 
 
 def main() -> None:
-    """Runs the script using command-line arguments."""
-    args = _get_cmdline_args()
-    lines = _get_file_lines(args.file)
+    """Runs the script with command-line arguments."""
+    args = _parse_cmdline_args()
+
+    if args.file is not None:
+        file = args.file
+    else:
+        file = input("Enter the name of a CFG file: ")
+
+    lines = _get_file_lines(file)
 
     try:
         cfg = _CFG(lines)
     except _CFGFormatError:
-        print(f'File "{args.file}" does not contain a valid CFG.')
+        print(f'File "{file}" does not contain a valid CFG.')
         sys.exit(1)
 
     while True:
@@ -135,13 +141,11 @@ def _cross_product(first_set: set[str], second_set: set[str]) -> set[str]:
     return result
 
 
-def _get_cmdline_args() -> argparse.Namespace:
+def _parse_cmdline_args() -> argparse.Namespace:
     # Parses and returns command-line arguments for the program.
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--file",
-                        default="cfg.txt",
-                        help='the file to generate rules from '
-                             '(default: "%(default)s")')
+                        help="the file to generate rules from")
 
     return parser.parse_args()
 

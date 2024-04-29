@@ -6,4 +6,4 @@ for i in range(1, 5):
 
     # Run cyk.py for the current files
     print("Running CYK for Question", i, "Strings...")
-    subprocess.run(["python", "cyk.py", "-f", question_rules_file, "-t", test_file])
+    subprocess.run(["python", "cyk.py", "-c", question_rules_file, "-t", test_file])

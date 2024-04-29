@@ -1,5 +1,0 @@
-S -> BE | AA | epsilon
-A -> BE | AA
-B -> TA | (
-T -> (
-E -> )

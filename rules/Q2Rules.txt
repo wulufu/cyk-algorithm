@@ -1,0 +1,10 @@
+S -> ME | DN
+M -> AO | AB
+O -> MB
+N -> BP | BC
+P -> NC
+D -> DD | a
+E -> EE | c
+A -> a
+B -> b
+C -> c

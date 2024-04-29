@@ -1,6 +1,0 @@
-S -> TT | BA | #
-T -> OT | TO | #
-U -> BA | #
-O -> 0
-A -> OO
-B -> OU

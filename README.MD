@@ -9,13 +9,17 @@ provided using '-f' or '--file' when running the script, otherwise the user
 will be prompted for it. The program will exit if the file is not found.
 
 ## Table of Contents
+- [Requirements](#requirements)
 - [Installation](#installation)
-- [How it works?](#Howitworks?)
+- [How it works?](#how-it-works)
 - [Contributing](#contributing)
+
+## Requirements
+- Python
 
 ## Installation
 In order to setup the project, you can copy the URL from the github repository and
-clone the repository, using the VCS from your IDE. Once the project files are loaded into the IDE the script can be run in the following ways through-
+clone the repository, using the VCS from your IDE. Once the project files are loaded into the IDE the script can be run in the following ways through -
 
 -   ```python cyk.py```
     Program will ask you for the name of the file containing CFG rules. If the file or the rules is invalid, the program will exit. 
@@ -28,6 +32,8 @@ clone the repository, using the VCS from your IDE. Once the project files are lo
 Enter strings to test against the CFG. Repeat testing or exit the program using the test files that are provided in the folder.
 
 ## How it works?
+
+### CFG Rule Set
 Each line in the file must be of the form "A -> BC", "S -> epsilon", or
 "A -> a", where 'A', 'B', and 'C' are variables, 'S' is the axiom, and 'a' is
 a terminal. Optionally, two or more rules with the same left-hand side can be
@@ -37,6 +43,12 @@ A variable that appears on the right-hand side of a rule must also be
 defined on the left-hand side of at least one rule. The first variable
 to be defined is assumed to be the axiom of the CFG. If any rule in the file
 is formatted incorrectly, the program will exit.
+
+### file -CFG Rule Set file
+Each line is a rule.
+
+### testFile - Test Strings for CFGs [Optional]
+Each line is a string that will be tested. If this is used then the program will close after all strings are tested
 
 Once the CFG is created, the user will be prompted to enter a string.
 CYK will be performed on this string, and the result will be displayed.

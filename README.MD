@@ -10,16 +10,19 @@ will be prompted for it. The program will exit if the file is not found.
 
 ## Table of Contents
 - [Installation](#installation)
-- [Usage](#usage)
+- [How it works?](#Howitworks?)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Installation
 In order to setup the project, you can copy the URL from the github repository and
-clone the repository, using the VCS from your IDE. Once the project files are loaded into the IDE Run the script with the CFG file as an argument.
+clone the repository, using the VCS from your IDE. Once the project files are loaded into the IDE the script can be run in the following ways -
+
+- 
+
 Enter strings to test against the CFG. Repeat testing or exit the program using the test files that are provided in the folder.
 
-## Usage
+## How it works?
 Each line in the file must be of the form "A -> BC", "S -> epsilon", or
 "A -> a", where 'A', 'B', and 'C' are variables, 'S' is the axiom, and 'a' is
 a terminal. Optionally, two or more rules with the same left-hand side can be
@@ -41,5 +44,5 @@ invalid list of rules.
 
 ## Contributing
 1 person will be doing the questions by hand (Alex)
-2 people will be making the algorithm to solve the questions in the code (Ishty and Wolfgang)
+2 people will be making the algorithm to solve the questions in the code (Wolfgang and Ishtyaq)
 2 people will be testing the code and doing documenting (Collin and Jack)

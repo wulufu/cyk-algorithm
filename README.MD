@@ -12,13 +12,18 @@ will be prompted for it. The program will exit if the file is not found.
 - [Installation](#installation)
 - [How it works?](#Howitworks?)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 In order to setup the project, you can copy the URL from the github repository and
-clone the repository, using the VCS from your IDE. Once the project files are loaded into the IDE the script can be run in the following ways -
+clone the repository, using the VCS from your IDE. Once the project files are loaded into the IDE the script can be run in the following ways through-
 
-- 
+-   ```python cyk.py```
+    Program will ask you for the name of the file containing CFG rules. If the file or the rules is invalid, the program will exit. 
+-   ```python cyk.py -f <file>```
+    Replace `<file>` with the name of the text file containing the context-free grammar.
+    If an invalid rule-set is in the file the program will throw a CFGFormatError.
+-   ```python cyk.py -f <file> -t <testFile>```
+    Replace `<file>` with the name of the text file containing the context-free grammar. Replace `<testFile>` with file containing testable strings.
 
 Enter strings to test against the CFG. Repeat testing or exit the program using the test files that are provided in the folder.
 

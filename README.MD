@@ -44,11 +44,11 @@ defined on the left-hand side of at least one rule. The first variable
 to be defined is assumed to be the axiom of the CFG. If any rule in the file
 is formatted incorrectly, the program will exit.
 
-### file -CFG Rule Set file
-Each line is a rule.
+### -f <file> -CFG Rule Set file
+- Each line is a rule.
 
-### testFile - Test Strings for CFGs [Optional]
-Each line is a string that will be tested. If this is used then the program will close after all strings are tested
+### -t <testFile> - Test Strings for CFGs [Optional]
+- Each line is a string that will be tested. If this is used then the program will close after all strings are tested
 
 Once the CFG is created, the user will be prompted to enter a string.
 CYK will be performed on this string, and the result will be displayed.

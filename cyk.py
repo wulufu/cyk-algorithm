@@ -41,7 +41,7 @@ def main() -> None:
     else:
         file = input("Enter the name of a CFG file: ")
 
-    if testFile is not None:
+    if args.testFile is not None:
         testLines = _get_file_lines(testFile)
     lines = _get_file_lines(file)
 
@@ -51,7 +51,7 @@ def main() -> None:
         print(f'File "{file}" does not contain a valid CFG.')
         sys.exit(1)
 
-    if testLines is None:
+    if args.testFile is None:
         while True:
             _test_user_input(cfg)
     else:
